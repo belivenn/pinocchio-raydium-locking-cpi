@@ -1,7 +1,7 @@
 [package]
 name = "pinocchio-raydium-locking-program"
 description = "Pinocchio helpers to invoke Raydium Locking IXs"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["belivenn"]
 license = "Apache-2.0"

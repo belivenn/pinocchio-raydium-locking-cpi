@@ -24,7 +24,7 @@ pub struct LockedClmmPositionState {
 }
 
 impl LockedClmmPositionState {
-    pub const LEN: usize = core::mem::size_of::<Self>() + 8;
+    pub const LEN: usize = 8 + 1 + 32 + 32 + 32 + 32 + 32 + 8 + (8 * 8);
 
     #[inline]
     pub fn from_account_info(account_info: &AccountInfo) -> Result<Ref<Self>, ProgramError> {

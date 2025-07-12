@@ -27,7 +27,7 @@ pub struct LockedCpLiquidityState {
 }
 
 impl LockedCpLiquidityState {
-    pub const LEN: usize = core::mem::size_of::<Self>() + 8;
+    pub const LEN: usize = 8 + 8 + 8 + 8 + 8 + 16 + 8 + 32 + 32 + 32 + 32 + (8 * 8);
     
 
     #[inline]
