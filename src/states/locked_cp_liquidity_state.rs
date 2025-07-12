@@ -27,7 +27,8 @@ pub struct LockedCpLiquidityState {
 }
 
 impl LockedCpLiquidityState {
-    pub const LEN: usize = core::mem::size_of::<Self>();
+    pub const LEN: usize = core::mem::size_of::<Self>() + 8;
+    
 
     #[inline]
     pub fn from_account_info(account_info: &AccountInfo) -> Result<Ref<Self>, ProgramError> {
@@ -57,6 +58,6 @@ impl LockedCpLiquidityState {
 
     #[inline(always)]
     pub unsafe fn from_bytes(bytes: &[u8]) -> &Self {
-        &*(bytes.as_ptr() as *const Self)
+        &*(bytes.as_ptr().add(8) as *const Self)
     }
 }
