@@ -2,7 +2,7 @@
 name = "pinocchio-raydium-locking-program"
 description = "Pinocchio helpers to invoke Raydium Locking IXs"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 authors = ["belivenn"]
 license = "Apache-2.0"
 readme = "./README.md"
@@ -11,8 +11,10 @@ homepage = "https://github.com/belivenn/pinocchio-raydium-locking-cpi"
 keywords = ["solana", "raydium", "locking", "pinocchio", "cpi"]
 
 [lib]
-crate-type = ["lib", "cdylib"]
+crate-type = ["rlib"]
 
 [dependencies]
 pinocchio = "0.8.4"
 pinocchio-system = "0.2.3"
+pinocchio-pubkey = "0.2.4"
+

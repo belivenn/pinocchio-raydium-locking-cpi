@@ -38,6 +38,7 @@ name = "pinocchio-raydium-locking-program"
 version = "0.1.0"
 dependencies = [
  "pinocchio",
+ "pinocchio-pubkey",
  "pinocchio-system",
 ]
 

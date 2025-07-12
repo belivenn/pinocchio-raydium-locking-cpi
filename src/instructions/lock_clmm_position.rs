@@ -1,5 +1,4 @@
 use core::slice::from_raw_parts;
-use core::mem::MaybeUninit;
 
 use pinocchio::{
     account_info::AccountInfo,
