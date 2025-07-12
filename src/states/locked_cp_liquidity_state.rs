@@ -39,7 +39,7 @@ impl LockedCpLiquidityState {
             return Err(ProgramError::InvalidAccountOwner);
         }
         Ok(Ref::map(account_info.try_borrow_data()?, |data| unsafe {
-            Self::from_bytes(data)
+            Self::from_bytes(&data[8..])
         }))
     }
 
@@ -53,11 +53,11 @@ impl LockedCpLiquidityState {
         if account_info.owner() != &ID {
             return Err(ProgramError::InvalidAccountOwner);
         }
-        Ok(Self::from_bytes(account_info.borrow_data_unchecked()))
+        Ok(Self::from_bytes(&account_info.borrow_data_unchecked()[8..]))
     }
 
     #[inline(always)]
     pub unsafe fn from_bytes(bytes: &[u8]) -> &Self {
-        &*(bytes.as_ptr().add(8) as *const Self)
+        &*(bytes.as_ptr() as *const Self)
     }
 }

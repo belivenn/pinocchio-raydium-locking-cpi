@@ -35,7 +35,7 @@ dependencies = [
 
 [[package]]
 name = "pinocchio-raydium-locking-program"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "pinocchio",
  "pinocchio-pubkey",
