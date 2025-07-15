@@ -8,6 +8,7 @@ use crate::ID;
 
 // Seed for LockedClmmPositionState account
 pub const LOCKED_POSITION_SEED: &str = "locked_position";
+// Seed for authority account
 pub const LOCK_CLMM_AUTH_SEED: &str = "program_authority_seed";
 
 #[repr(C)]
@@ -24,7 +25,7 @@ pub struct LockedClmmPositionState {
 }
 
 impl LockedClmmPositionState {
-    pub const LEN: usize = 8 + 1 + 32 + 32 + 32 + 32 + 32 + 8 + (8 * 8);
+    pub const LEN: usize = core::mem::size_of::<Self>() + 8;
 
     #[inline]
     pub fn from_account_info(account_info: &AccountInfo) -> Result<Ref<Self>, ProgramError> {

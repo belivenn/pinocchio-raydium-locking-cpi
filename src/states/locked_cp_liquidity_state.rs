@@ -8,6 +8,7 @@ use crate::ID;
 
 // Seed for LockedCpLiquidityState account
 pub const LOCKED_LIQUIDITY_SEED: &str = "locked_liquidity";
+// Seed for authority account
 pub const LOCK_CP_AUTH_SEED: &str = "lock_cp_authority_seed";
 
 #[repr(C)]
@@ -27,7 +28,7 @@ pub struct LockedCpLiquidityState {
 }
 
 impl LockedCpLiquidityState {
-    pub const LEN: usize = 8 + 8 + 8 + 8 + 8 + 16 + 8 + 32 + 32 + 32 + 32 + (8 * 8);
+    pub const LEN: usize = core::mem::size_of::<Self>() + 8;
     
 
     #[inline]

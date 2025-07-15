@@ -15,7 +15,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-pinocchio-raydium-locking-program = "0.1.3"
+pinocchio-raydium-locking-program = "0.1.4"
 ```
 
 ## Usage

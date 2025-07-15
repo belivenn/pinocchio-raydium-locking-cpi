@@ -18,9 +18,9 @@ pub struct LockClmmPosition<'a> {
     pub personal_position: &'a AccountInfo,            // []          (readonly)
     pub position_nft_mint: &'a AccountInfo,            // []          (readonly)
     pub locked_nft_account: &'a AccountInfo,           // [WRITE]     (mutable)
-    pub locked_position: &'a AccountInfo,              // [WRITE]     (init)
-    pub fee_nft_mint: &'a AccountInfo,                 // [WRITE]     (init, mint)
-    pub fee_nft_account: &'a AccountInfo,              // [WRITE]     (init, ATA)
+    pub locked_position: &'a AccountInfo,              // [WRITE]     (mutable)
+    pub fee_nft_mint: &'a AccountInfo,                 // [WRITE]     (mutable)
+    pub fee_nft_account: &'a AccountInfo,              // [WRITE]     (mutable)
     pub metadata_account: &'a AccountInfo,             // [WRITE]     (mutable)
     pub metadata_program: &'a AccountInfo,             // []          (readonly)
     pub associated_token_program: &'a AccountInfo,     // []          (readonly)
@@ -69,7 +69,7 @@ impl LockClmmPosition<'_> {
         let discriminator: [u8; 8] = [0xbc, 0x25, 0xb3, 0x83, 0x52, 0x96, 0x54, 0x49]; 
         write_bytes(&mut instruction_data[0..8], &discriminator);
         
-        // Set with_metadata (1 bytes)
+        // Set with_metadata (1 byte)
         write_bytes(&mut instruction_data[8..], &[self.with_metadata as u8]);
 
         let instruction = Instruction {
